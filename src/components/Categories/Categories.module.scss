@@ -1,0 +1,18 @@
+.root {
+  ul {
+    padding: 0;
+    display: flex;
+    gap: 5px;
+    list-style: none;
+
+    li {
+      border-radius: 5px;
+      padding: 5px;
+      cursor: pointer;
+    }
+
+    .active {
+      background-color: rgb(238, 129, 129);
+    }
+  }
+}

@@ -1,17 +1,16 @@
 import React from 'react'
-import reactLogo from './assets/react.svg'
 import { useAppDispatch, useAppSelector } from './redux/store'
 import { categoriesSelector } from './redux/categories/selectors'
 import { getDirections, getFilter } from './redux/categories/asyncActions'
 
-import { GetSelect } from './components/GetSelect/GetSelect'
-import { GiveSelect } from './components/GiveSelect/GiveSelect'
+import { GetArea } from './components/GetArea/GetArea'
+import { GiveArea } from './components/GiveArea/GiveArea'
 
 import './App.scss'
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch()
-  const { directions, filter, categoryFilter, categoriesStatus } =
+  const { directions, filter, selectGiveCategory, status } =
     useAppSelector(categoriesSelector)
 
   React.useEffect(() => {
@@ -25,8 +24,14 @@ const App: React.FC = () => {
 
   return (
     <div className='root'>
-      <GiveSelect directions={directions} categoryFilter={categoryFilter} />
-      <GetSelect directions={directions} categoryFilter={categoryFilter} />
+      {/* GIVE AREA */}
+      <GiveArea
+        directions={directions}
+        selectGiveCategory={selectGiveCategory}
+      />
+
+      {/* GET AREA */}
+      {/* <GetArea directions={directions} categoryFilter={category} /> */}
     </div>
   )
 }

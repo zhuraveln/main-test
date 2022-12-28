@@ -1,15 +1,16 @@
 // Status
 export enum Status {
-  LOADING = 'loading',
-  SUCCESS = 'success',
-  ERROR = 'error'
+  LOADING = 'LOADING',
+  SUCCESS = 'SUCCESS',
+  ERROR = 'ERROR'
 }
 
+// Categories state
 export interface CategoriesSliceState {
-  categoryFilter: string[]
+  selectGiveCategory: string
   directions: Direction[]
   filter: Filter[]
-  categoriesStatus: Status
+  status: Status
 }
 
 export interface Direction {
