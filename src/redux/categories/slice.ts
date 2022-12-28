@@ -3,6 +3,7 @@ import { getDirections, getFilter } from './asyncActions'
 import { CategoriesSliceState, Status } from './types'
 
 const initialState: CategoriesSliceState = {
+  categoryFilter: ['Все', 'Криптовалюты', 'Банки', 'Наличные'],
   directions: [],
   filter: [],
   categoriesStatus: Status.LOADING

@@ -1,0 +1,27 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  .header {
+    h4 {
+      text-align: start;
+      color: rgb(238, 129, 129);
+    }
+  }
+
+  .categories {
+    ul {
+      padding: 0;
+      display: flex;
+      gap: 10px;
+      list-style: none;
+
+      li {
+        background-color: rgb(238, 129, 129);
+        border-radius: 5px;
+        padding: 5px;
+      }
+    }
+  }
+}

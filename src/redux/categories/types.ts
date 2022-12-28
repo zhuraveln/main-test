@@ -6,6 +6,7 @@ export enum Status {
 }
 
 export interface CategoriesSliceState {
+  categoryFilter: string[]
   directions: Direction[]
   filter: Filter[]
   categoriesStatus: Status
