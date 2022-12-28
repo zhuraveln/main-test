@@ -3,11 +3,6 @@ import { Direction } from '../../redux/categories/types'
 
 import styles from './GetArea.module.scss'
 
-interface IGetSelectProps {
-  directions: Direction[]
-  category: string[]
-}
-
-export const GetArea: React.FC<IGetSelectProps> = () => {
+export const GetArea: React.FC = () => {
   return <div>GetSelect</div>
 }
