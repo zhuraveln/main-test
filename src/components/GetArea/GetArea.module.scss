@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  h4 {
+    text-align: start;
+    color: rgb(238, 129, 129);
+  }
+}

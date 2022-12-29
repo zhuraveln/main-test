@@ -21,7 +21,7 @@ const App: React.FC = () => {
       <GiveArea />
 
       {/* GET AREA */}
-      {/* <GetArea /> */}
+      <GetArea />
     </div>
   )
 }

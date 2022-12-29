@@ -7,7 +7,10 @@ export enum Status {
 
 // Categories state
 export interface CategoriesSliceState {
-  selectGiveCategory: string
+  currentGiveCategory: string
+  currentGiveDirection: string
+  currentGetCategory: string
+  currentGetDirection: string
   directions: Direction[]
   filter: Filter[]
   status: Status

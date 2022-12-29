@@ -1,13 +1,19 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { getDirections, getFilter } from './asyncActions'
 import { CategoriesSliceState, Status } from './types'
 
 export const categories: string[] = ['Все', 'Криптовалюты', 'Банки', 'Наличные']
 
 const initialState: CategoriesSliceState = {
-  selectGiveCategory: categories[0],
+  currentGiveCategory: categories[0],
+  currentGiveDirection: 'BTC',
+
+  currentGetCategory: categories[0],
+  currentGetDirection: 'CASHRUB',
+
   directions: [],
   filter: [],
+
   status: Status.LOADING
 }
 
@@ -15,8 +21,17 @@ export const tasksSlice = createSlice({
   name: 'categories',
   initialState,
   reducers: {
-    setGiveCategory(state, action) {
-      state.selectGiveCategory = action.payload
+    setGiveCategory(state, action: PayloadAction<string>) {
+      state.currentGiveCategory = action.payload
+    },
+    setGetCategory(state, action: PayloadAction<string>) {
+      state.currentGetCategory = action.payload
+    },
+    setGiveDirection(state, action: PayloadAction<string>) {
+      state.currentGiveDirection = action.payload
+    },
+    setGetDirection(state, action: PayloadAction<string>) {
+      state.currentGetDirection = action.payload
     }
   },
   extraReducers: builder => {
@@ -46,6 +61,11 @@ export const tasksSlice = createSlice({
   }
 })
 
-export const { setGiveCategory } = tasksSlice.actions
+export const {
+  setGiveCategory,
+  setGetCategory,
+  setGiveDirection,
+  setGetDirection
+} = tasksSlice.actions
 
 export default tasksSlice.reducer

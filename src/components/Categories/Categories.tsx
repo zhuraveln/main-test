@@ -1,17 +1,26 @@
 import React from 'react'
-import { categoriesSelector } from '../../redux/categories/selectors'
-import { categories, setGiveCategory } from '../../redux/categories/slice'
-import { useAppDispatch, useAppSelector } from '../../redux/store'
+import { ActionCreatorWithPayload } from '@reduxjs/toolkit'
+import { categories } from '../../redux/categories/slice'
+import { useAppDispatch } from '../../redux/store'
 
 import styles from './Categories.module.scss'
 
-export const Categories: React.FC = () => {
+interface ICategories {
+  selectCategory: string
+  setCategory: ActionCreatorWithPayload<
+    string,
+    'categories/setGiveCategory' | 'categories/setGetCategory'
+  >
+}
+
+export const Categories: React.FC<ICategories> = ({
+  selectCategory,
+  setCategory
+}) => {
   const dispatch = useAppDispatch()
 
-  const { selectGiveCategory } = useAppSelector(categoriesSelector)
-
   const changeCategory = (category: string) => {
-    dispatch(setGiveCategory(category))
+    dispatch(setCategory(category))
   }
 
   return (
@@ -19,9 +28,7 @@ export const Categories: React.FC = () => {
       <ul>
         {categories?.map((category, index) => (
           <li
-            className={
-              selectGiveCategory === category ? `${styles.active}` : ''
-            }
+            className={selectCategory === category ? `${styles.active}` : ''}
             onClick={() => changeCategory(category)}
             key={index}
           >
