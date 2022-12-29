@@ -1,29 +1,4 @@
-import { Direction } from '../redux/categories/types'
-
-// interface Cryptocurrencies {
-//   code: 'BTC' | 'ETH' | 'USDTTRC'
-// }
-
-// interface Banks {
-//   code: 'ACRUB' | 'SBERRUB' | 'TCSBRUB'
-// }
-
-// interface Cash {
-//   code: 'CASHUSD' | 'CASHRUB'
-// }
-
-// const categoriesGroup = {
-//   cryptocurrencies: ['BTC', 'ETH', 'USDTTRC'],
-//   banks: ['ACRUB', 'SBERRUB', 'TCSBRUB'],
-//   cash: ['CASHUSD', 'CASHRUB']
-// }
-
-// // create a new group
-// const group = {
-//   cryptocurrencies: [],
-//   banks: [],
-//   cash: []
-// }
+import { Direction } from '../redux/filters/types'
 
 export const defineDirectionsByCategory = (
   directions: Direction[],

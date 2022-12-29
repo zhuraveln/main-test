@@ -18,7 +18,7 @@ const initialState: CategoriesSliceState = {
 }
 
 export const tasksSlice = createSlice({
-  name: 'categories',
+  name: 'filters',
   initialState,
   reducers: {
     // set category

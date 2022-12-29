@@ -1,4 +1,4 @@
-import { Direction, Filter } from '../redux/categories/types'
+import { Filter } from '../redux/filters/types'
 import { defineDirectionsByCategory } from './defineDirectionsByCategory'
 
 export const defineAvailableGetDirections = (
@@ -6,18 +6,18 @@ export const defineAvailableGetDirections = (
   currentGiveDirection: string,
   currentGetCategory: string
 ) => {
-  if (filter) {
-    const availableGetDirections = filter.find(
-      filter => filter.from.code === currentGiveDirection
+  const availableGetDirections = filter.find(
+    filter => filter.from.code === currentGiveDirection
+  )
+
+  if (availableGetDirections) {
+    const availableGetDirectionsByCategory = defineDirectionsByCategory(
+      availableGetDirections?.to,
+      currentGetCategory
     )
 
-    if (availableGetDirections) {
-      const availableGetDirectionsByCategory = defineDirectionsByCategory(
-        availableGetDirections?.to,
-        currentGetCategory
-      )
-
-      return availableGetDirectionsByCategory
-    }
+    return availableGetDirectionsByCategory
   }
+
+  return null
 }

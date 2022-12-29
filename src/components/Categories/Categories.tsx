@@ -1,6 +1,6 @@
 import React from 'react'
 import { ActionCreatorWithPayload } from '@reduxjs/toolkit'
-import { categories } from '../../redux/categories/slice'
+import { categories } from '../../redux/filters/slice'
 import { useAppDispatch } from '../../redux/store'
 
 import styles from './Categories.module.scss'
@@ -9,7 +9,7 @@ interface ICategories {
   currentCategory: string
   setCategory: ActionCreatorWithPayload<
     string,
-    'categories/setGiveCategory' | 'categories/setGetCategory'
+    'filters/setGiveCategory' | 'filters/setGetCategory'
   >
 }
 

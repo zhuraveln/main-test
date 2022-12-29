@@ -1,15 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
-import categories from './categories/slice'
+import filters from './filters/slice'
 
 // Store
 export const store = configureStore({
   reducer: {
-    categories
+    filters
   }
 })
 
-// Root state
+// Typed Root state
 export type RootState = ReturnType<typeof store.getState>
 
 // Typed redux dispatch

@@ -1,10 +1,10 @@
 import React from 'react'
-import { categoriesSelector } from '../../redux/categories/selectors'
-import { setGetCategory } from '../../redux/categories/slice'
+import { categoriesSelector } from '../../redux/filters/selectors'
+import { setGetCategory } from '../../redux/filters/slice'
 import { useAppDispatch, useAppSelector } from '../../redux/store'
 
 import { Categories } from '../Categories/Categories'
-import { CurrencyGetInput } from '../CurrencyGetInput/CurrencyGetInput'
+import { GetInput } from './GetInput/GetInput'
 
 import styles from './GetArea.module.scss'
 
@@ -30,7 +30,7 @@ export const GetArea: React.FC = () => {
       />
 
       {/* CURRENCYINPUT */}
-      <CurrencyGetInput />
+      <GetInput />
     </div>
   )
 }

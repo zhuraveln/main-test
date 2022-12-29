@@ -5,7 +5,7 @@ export enum Status {
   ERROR = 'ERROR'
 }
 
-// Categories state
+// Filters state
 export interface CategoriesSliceState {
   currentGiveCategory: string
   currentGiveDirection: string
