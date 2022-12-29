@@ -19,7 +19,7 @@ export const GiveArea: React.FC = () => {
 
       {/* CATEGORIES */}
       <Categories
-        selectCategory={selectGiveCategory}
+        currentCategory={selectGiveCategory}
         setCategory={setGiveCategory}
       />
 

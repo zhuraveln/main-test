@@ -1,7 +1,7 @@
 import React from 'react'
 import { categoriesSelector } from '../../redux/categories/selectors'
 import { setGetCategory } from '../../redux/categories/slice'
-import { useAppSelector } from '../../redux/store'
+import { useAppDispatch, useAppSelector } from '../../redux/store'
 
 import { Categories } from '../Categories/Categories'
 import { CurrencyGetInput } from '../CurrencyGetInput/CurrencyGetInput'
@@ -9,8 +9,14 @@ import { CurrencyGetInput } from '../CurrencyGetInput/CurrencyGetInput'
 import styles from './GetArea.module.scss'
 
 export const GetArea: React.FC = () => {
-  const { currentGetCategory: selectGetCategory } =
+  const dispatch = useAppDispatch()
+
+  const { currentGetCategory, currentGiveCategory } =
     useAppSelector(categoriesSelector)
+
+  React.useEffect(() => {
+    dispatch(setGetCategory('Все'))
+  }, [currentGiveCategory])
 
   return (
     <div className={styles.root}>
@@ -19,7 +25,7 @@ export const GetArea: React.FC = () => {
 
       {/* CATEGORIES */}
       <Categories
-        selectCategory={selectGetCategory}
+        currentCategory={currentGetCategory}
         setCategory={setGetCategory}
       />
 

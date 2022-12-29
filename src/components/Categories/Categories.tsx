@@ -6,7 +6,7 @@ import { useAppDispatch } from '../../redux/store'
 import styles from './Categories.module.scss'
 
 interface ICategories {
-  selectCategory: string
+  currentCategory: string
   setCategory: ActionCreatorWithPayload<
     string,
     'categories/setGiveCategory' | 'categories/setGetCategory'
@@ -14,7 +14,7 @@ interface ICategories {
 }
 
 export const Categories: React.FC<ICategories> = ({
-  selectCategory,
+  currentCategory,
   setCategory
 }) => {
   const dispatch = useAppDispatch()
@@ -28,7 +28,7 @@ export const Categories: React.FC<ICategories> = ({
       <ul>
         {categories?.map((category, index) => (
           <li
-            className={selectCategory === category ? `${styles.active}` : ''}
+            className={currentCategory === category ? `${styles.active}` : ''}
             onClick={() => changeCategory(category)}
             key={index}
           >
