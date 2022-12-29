@@ -46,7 +46,7 @@ export const GiveInput: React.FC = () => {
         {availableDirections?.length &&
           availableDirections?.map(direction => (
             <option value={direction.code} key={direction.code}>
-              {direction.code}
+              {direction.name}
             </option>
           ))}
       </select>
