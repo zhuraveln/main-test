@@ -1,9 +1,8 @@
 import React from 'react'
-import { useAppDispatch, useAppSelector } from './redux/store'
+import { useAppDispatch } from './redux/store'
 import { getDirections, getFilter } from './redux/filters/asyncActions'
 
-import { GetArea } from './components/GetArea/GetArea'
-import { GiveArea } from './components/GiveArea/GiveArea'
+import { GetArea, GiveArea } from './components'
 
 import './App.scss'
 

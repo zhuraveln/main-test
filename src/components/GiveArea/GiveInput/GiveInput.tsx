@@ -2,8 +2,8 @@ import React from 'react'
 import { categoriesSelector } from '../../../redux/filters/selectors'
 import { setGiveDirection } from '../../../redux/filters/slice'
 import { Direction } from '../../../redux/filters/types'
-
 import { useAppDispatch, useAppSelector } from '../../../redux/store'
+
 import { defineDirectionsByCategory } from '../../../utils/defineDirectionsByCategory'
 
 import styles from './GiveInput.module.scss'
@@ -41,7 +41,10 @@ export const GiveInput: React.FC = () => {
 
   return (
     <div className={styles.currencyInput}>
+      {/* INPUT */}
       <input type='number' placeholder='0.24891-12.061'></input>
+
+      {/* SELECT */}
       <select onChange={onChangeSelect} value={currentGiveDirection}>
         {availableDirections?.length &&
           availableDirections?.map(direction => (

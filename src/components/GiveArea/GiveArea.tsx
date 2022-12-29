@@ -3,8 +3,7 @@ import { categoriesSelector } from '../../redux/filters/selectors'
 import { setGiveCategory } from '../../redux/filters/slice'
 import { useAppSelector } from '../../redux/store'
 
-import { Categories } from '../Categories/Categories'
-import { GiveInput } from './GiveInput/GiveInput'
+import { Categories, GiveInput } from '..'
 
 import styles from './GiveArea.module.scss'
 
