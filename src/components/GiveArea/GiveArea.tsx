@@ -9,6 +9,7 @@ import { GiveInput } from './GiveInput/GiveInput'
 import styles from './GiveArea.module.scss'
 
 export const GiveArea: React.FC = () => {
+  // Getting values from Redux store
   const { currentGiveCategory: selectGiveCategory } =
     useAppSelector(categoriesSelector)
 

@@ -19,6 +19,7 @@ export const Categories: React.FC<ICategories> = ({
 }) => {
   const dispatch = useAppDispatch()
 
+  // Handler for click to category
   const changeCategory = (category: string) => {
     dispatch(setCategory(category))
   }

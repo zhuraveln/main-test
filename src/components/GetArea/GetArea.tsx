@@ -11,9 +11,11 @@ import styles from './GetArea.module.scss'
 export const GetArea: React.FC = () => {
   const dispatch = useAppDispatch()
 
+  // Getting values from Redux store
   const { currentGetCategory, currentGiveCategory } =
     useAppSelector(categoriesSelector)
 
+  // Set to default GetCategory if changed GiveCategory
   React.useEffect(() => {
     dispatch(setGetCategory('Все'))
   }, [currentGiveCategory])
