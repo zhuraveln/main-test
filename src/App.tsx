@@ -17,11 +17,13 @@ const App: React.FC = () => {
 
   return (
     <div className='root'>
-      {/* GIVE AREA */}
-      <GiveArea />
+      <div className='container'>
+        {/* GIVE AREA */}
+        <GiveArea />
 
-      {/* GET AREA */}
-      <GetArea />
+        {/* GET AREA */}
+        <GetArea />
+      </div>
     </div>
   )
 }
