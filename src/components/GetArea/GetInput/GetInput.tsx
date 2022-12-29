@@ -24,6 +24,9 @@ export const GetInput: React.FC = () => {
     Direction[] | null
   >(null)
 
+  console.log(availableDirections)
+  console.log(currentGiveDirection)
+
   // Set availableDirections
   React.useEffect(() => {
     if (filter.length) {
@@ -35,7 +38,7 @@ export const GetInput: React.FC = () => {
         )
       )
     }
-  }, [filter, currentGetCategory])
+  }, [filter, currentGetCategory, currentGiveDirection])
 
   // Set currentGiveDirection
   React.useEffect(() => {
