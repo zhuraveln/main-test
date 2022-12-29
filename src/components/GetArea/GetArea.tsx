@@ -4,7 +4,7 @@ import { setGetCategory } from '../../redux/categories/slice'
 import { useAppSelector } from '../../redux/store'
 
 import { Categories } from '../Categories/Categories'
-import { CurrencyInput } from '../CurrencyInput/CurrencyInput'
+import { CurrencyGetInput } from '../CurrencyGetInput/CurrencyGetInput'
 
 import styles from './GetArea.module.scss'
 
@@ -24,7 +24,7 @@ export const GetArea: React.FC = () => {
       />
 
       {/* CURRENCYINPUT */}
-      <CurrencyInput />
+      <CurrencyGetInput />
     </div>
   )
 }

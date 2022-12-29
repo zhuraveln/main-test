@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { getDirections, getFilter } from './asyncActions'
-import { CategoriesSliceState, Status } from './types'
+import { CategoriesSliceState, Direction, Filter, Status } from './types'
 
 export const categories: string[] = ['Все', 'Криптовалюты', 'Банки', 'Наличные']
 
@@ -21,12 +21,15 @@ export const tasksSlice = createSlice({
   name: 'categories',
   initialState,
   reducers: {
+    // set category
     setGiveCategory(state, action: PayloadAction<string>) {
       state.currentGiveCategory = action.payload
     },
     setGetCategory(state, action: PayloadAction<string>) {
       state.currentGetCategory = action.payload
     },
+
+    // set direction
     setGiveDirection(state, action: PayloadAction<string>) {
       state.currentGiveDirection = action.payload
     },
@@ -39,10 +42,13 @@ export const tasksSlice = createSlice({
     builder.addCase(getDirections.pending, state => {
       state.status = Status.LOADING
     })
-    builder.addCase(getDirections.fulfilled, (state, action) => {
-      state.directions = action.payload
-      state.status = Status.SUCCESS
-    })
+    builder.addCase(
+      getDirections.fulfilled,
+      (state, action: PayloadAction<Direction[]>) => {
+        state.directions = action.payload
+        state.status = Status.SUCCESS
+      }
+    )
     builder.addCase(getDirections.rejected, state => {
       state.status = Status.ERROR
     })
@@ -51,10 +57,13 @@ export const tasksSlice = createSlice({
     builder.addCase(getFilter.pending, state => {
       state.status = Status.LOADING
     })
-    builder.addCase(getFilter.fulfilled, (state, action) => {
-      state.filter = action.payload
-      state.status = Status.SUCCESS
-    })
+    builder.addCase(
+      getFilter.fulfilled,
+      (state, action: PayloadAction<Filter[]>) => {
+        state.filter = action.payload
+        state.status = Status.SUCCESS
+      }
+    )
     builder.addCase(getFilter.rejected, state => {
       state.status = Status.ERROR
     })

@@ -23,5 +23,5 @@ export interface Direction {
 
 export interface Filter {
   from: Direction
-  to: Direction
+  to: Direction[]
 }
